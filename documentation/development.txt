@@ -1,0 +1,39 @@
+INTRODUCTION
+============
+
+This is a project to enable automaton of actions in the on-line, freemium, REST based game "The Kingdom of Loathing". 
+
+The URL for the game is https://www.kingdomofloathing.com.
+
+This sort of automation is defined, in the game, as a bot (being short for robot. There is a long history of this sort of automation, see the game's official wiki about this. For more details see https://kol.coldfront.net/thekolwiki/index.php/Bots.
+
+Why New Code?
+
+Most of the code for bots is based on python2 using pypi. Upgrading is not worth the effort as many of the libraries are unmaintained. An exception is the buffy account, see http://kol.obeliks.de/buffbot/ but the code is not public, and probably not python based.
+
+To support automation going forward a new project has been created. The rust language was choosen as all functions needed are part of the core libraries. Being a modern language it's hoped maintainablity by others is also easier.
+
+
+OVERVIEW
+========
+
+This is to be data-driven, that is a command from a player is recieved by the code and a predefined action will happen. 
+
+Feature design document: https://docs.google.com/document/d/1uXQTA_e7k_h1VwXBkKLDn7xPIhnmaqDWT6lfFJNehgE  (work in progress).
+
+CURRENT STATE
+=============
+
+The code can log-in and monitor chat messages. The code needs to be stopped by CTRL-C or sending a signal.
+
+NEXT STATE
+==========
+
+1. Handle a message with the command "restart", which will actually just kill the running process. Since this is to be run as a daemon the OS process (service, systemd, or initd) should be responsible for restarting.
+2. Close and reopen the chat data to regenerate the password hash, on command. This may requuire a new login, but at this time I have not scoped the details out.
+3. Send message on initial connection and on shutdown to supported chat channels.
+
+NEXT+1 STATE
+============
+Add full support for one of the current functions of CWBot. Probably either randomization or consultations.
+

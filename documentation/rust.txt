@@ -1,0 +1,54 @@
+INTRODUCTION
+
+This is being coded in rust (see https://www.rust-lang.org).
+
+It's expected you have some coding background, and you're familiar with recursion, forking, etc.
+
+This document is based on the assumption you are using a unix based OS, probably linux or OSX. https://doc.rust-lang.org/book/ch01-01-installation.html has full instructions for all OS types.
+
+Since rust is a new language I'm adding this doc to help novices understand the nuances of this code.
+
+INSTALLATION & HINTS
+
+Installation:
+curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh
+
+Check installation with:
+rustc --version
+
+Update with:
+rustup update
+
+DEVELOPMENT HIERACHY
+Using cargo:
+cargo new kolbot_2022
+
+Check the code:
+cargo check
+
+Build and run the code:
+cargo run
+
+The above creates the file in .../target/debug/
+
+Using
+cargo build --release 
+will leave the file in .../target/release and is fully optimized.
+
+Updates to Cargo.toml:
+cargo update
+
+Library Location
+================
+Does not exist like in C, perl, or python. See https://doc.rust-lang.org/cargo/guide/project-layout.html. But it can be forced, see https://learning-rust.github.io/docs/d4.crates.html, in a non-obvious way. 
+
+Buy using "mod <module>" to reference a file in main.rs you don't need to use lib.rs but this makes everything public to main.rs.
+
+Using "pub mod <module>" in lib.rs allows better isolation.
+
+CODE CHECK
+==========
+cargo fmt       Formatting checker for rust.
+cargo check     Check local pagacke and dependencies for errors.
+cargo clippy    Lint checker for rust.
+

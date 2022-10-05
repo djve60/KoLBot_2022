@@ -1,0 +1,4 @@
+Cargo.lock
+**/logs
+**/status
+**/target

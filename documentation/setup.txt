@@ -1,0 +1,14 @@
+To set-up this as a new project:
+
+cargo new kolbot_2022
+cargo new kolbot_2022/initialization --lib
+cd kolbot_2022
+mkdir data documentation license logs
+
+To backup before starting new features.
+tar cvf kob_bot.tar \
+    Cargo.toml LICENCE NOTICE README.md README.txt \
+    data documentation license src
+
+However I use git(1) so the above is only useful if you don't use 
+some form of version control.
