@@ -1,0 +1,57 @@
+An message is sent from the KoL servers, to the browser as JSON payload.
+There are 3 types of messages:
+1. event,
+2. private,
+3. public.
+
+An example of a message with all three types of messages is below.
+
+{
+    "msgs": [{
+            "msg": "How can you say &quot;combat isn't a major aspect of this game&quot;?",
+            "type": "public",
+            "mid": "1531196488",
+            "who": {
+                "name": "Marge",
+                "id": "1469700",
+                "color": "black"
+            },
+            "format": "0",
+            "channel": "newbie",
+            "channelcolor": "green",
+            "time": "1681317588"
+        }, {
+            "msg": "Now, to continue with trying <i title=\"to\">queue</i> get the <i title=\"Cartoon\">Typhoon</i> Harpoon effect to fire multiple times in a single post.<!--fb-->",
+            "type": "public",
+            "mid": "1531196542",
+            "who": {
+                "name": "Sinick",
+                "id": "2025307",
+                "color": "#336600"
+            },
+            "format": "0",
+            "channel": "clan",
+            "channelcolor": "green",
+            "time": "1681317644"
+        }, {
+            "type": "event",
+            "msg": "<a target=mainpane href='showplayer.php?who=2073084'><font color=green><b>djve</b></font></a> logged on.",
+            "link": false,
+            "time": "1681747054"
+        }, {
+            "type": "private",
+            "msg": "Lives of great men, all remind us, we can make our lives sublime. And in passing leave behind us, footprints in the sands of time.",
+            "who": {
+                "name": "djve",
+                "id": "2073084"
+            },
+            "time": "1681747178"
+        }, {
+            "type": "event",
+            "msg": "New message received from <a target=mainpane href='showplayer.php?who=2073084'><font color=green>djve</font></a>.",
+            "link": "messages.php",
+            "time": "1681752797
+        }],
+        "last": "1531196488",
+        "delay": 3000
+}

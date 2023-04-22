@@ -1,0 +1,84 @@
+[package]
+name = "kolbot_2022"
+version = "0.1.1"
+edition = "2021"
+authors  = ["David Evans <djve60+KoLBot@gmail.com"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+# https://doc.rust-lang.org/cargo/reference/profiles.html#debug for profiles.
+# When developing on OSX profile.dev is needed. See:
+# https://www.reddit.com/r/rust/comments/sadfzr/macos_gdb_and_cargo/
+# Use rust-lldb when on OSX, instead of rust-gdb.
+[profile.dev]
+debug = 2
+debug-assertions = true
+
+[profile.release]
+debug-assertions = false
+lto = true
+strip = true
+
+# Yes, I've use the wildcard for version, to keep all crates up with whatever
+# is the most recent. 
+
+[dependencies]
+
+# https://docs.rs/clap (Command Line Argument Parser).
+# For parsing CLI arguments.
+clap = {version = "*", features = ["color", "derive", "suggestions"]}
+
+# https://docs.rs/configparser/latest/configparser/ini/struct.Ini.html
+# To read ini format files.
+configparser = {version = "*"}
+
+# https://docs.rs/rpassword/
+# For reading passwords in a console application.
+rpassword = {version = "*"}
+
+# Woodn't you know that logging logging is needed …
+# https://docs.rs/log
+# https://docs.rs/flexi_logger
+log = {version = "*"}
+flexi_logger = {version = "*", features = ["compress"]}
+
+# https://docs.rs/reqwest
+# https://docs.rs/tokio
+# https://rust-lang-nursery.github.io/rust-cookbook/web/clients/requests.html
+# For HTTPS connections.
+# The reqwest library only retrives a single URL. Sub-documents are not
+# loaded. See https://stackoverflow.com/questions/72082257.
+reqwest = {version = "*", features = ["blocking", "cookies", "multipart"]}
+tokio = {version = "*", features = ["full"]}
+
+
+# https://docs.rs/chrono-tz/latest/chrono_tz/
+# For handling time and time zones.
+# The advisory RUSTSEC-2020-0159 hits both the chrono and the time crate. 
+# While time is striving for a solution, chrono appears to be unmaintained.
+# When time allows obtaining the UTC offset again on all platforms the calls
+# using chrono should be replace by time.
+chrono = {version = "*"}
+chrono-tz = {version = "*"}
+
+# https://docs.rs/signal-hook
+# Obviously for signal handling.
+signal-hook = {version = "*"}
+
+# https://crates.io/crates/lazy_static
+# For macro for declaring lazily evaluated statics in Rust.
+# Mainly used here for regular expression compilation.
+lazy_static = {version = "*"}
+
+# https://docs.rs/regex
+# Yes, I'm not scared of regular expressions.
+regex = {version = "*"}
+
+# https://docs.rs/rand
+# Need random numbers.
+rand = {version = "*"}
+
+
+
+# Temporary, I hope.
+# compare =  {version = "*"}

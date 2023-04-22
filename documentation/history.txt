@@ -1,0 +1,37 @@
+Copyright D. Evans (djve60+kolbot@gmail.com). All rights reserved.
+
+Who
+Date
+Description
+------------------------------------------------------------------
+djve60+kolbot@gmail.com
+05 Oct 2022
+v0.1.0 Initial check-in.
+1. Login and logout works. 
+2. Clean-up duplicated directory.
+------------------------------------------------------------------
+djve60+kolbot@gmail.com
+
+v0.1.1 
+1. Starts chat, opens channels as directed by configuration.
+2. Strips off chat effect, where possible.
+3. Responds to the "fortune" command.
+4. Responds to the "rule" command for non-combats in the clan basement.
+   The adventure title is NOT case sensitive.
+5. The above commands can be sent as private messages.
+6. Response is to the channel that sent it, including private messages.
+7. Any valid basement rule is returned for private messages. 
+8. Only rules relevant to the channel are returned when using a public channel.
+
+------------------------------------------------------------------
+
+Next checkin goals (for v0.1.2):
+1. Any updates to the rules.
+2. Top level help function.
+3. Hints subsystem.
+4. Consults with support for delayed constults.
+5. Support to stop the program. This will be the "restart" command, 
+   as it should be running as a deamon, when finished.
+6. Inital work on command permissions to only allow permitted players
+   to use the "restart" command.
+

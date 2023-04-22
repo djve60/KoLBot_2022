@@ -1,0 +1,32 @@
+
++-------+
+| Start |
++-------+
+
++---------------+
+| Read ininital |
+| configuration |
+| directives.   |
++---------------+
+
++------------+
+| Initialize |
+| logging.   |
++------------+
+
++--------------+
+| Is KoL in    |
+| maintenance? |
++--------------+
+
++-----------+
+| Is there  |
+| a network | 
+| issue?    |
++-----------+
+
+
++---------+
+| Login   |
+| worked? |
++---------+

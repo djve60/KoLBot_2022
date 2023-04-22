@@ -1,0 +1,13 @@
+[Unit]
+Description=KolBot daemon
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/path/to/binary
+Restart=always
+RestartSec=60
+TimeoutStopSec=120
+
+[Install]
+WantedBy=multi-user.target
