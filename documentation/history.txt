@@ -20,8 +20,8 @@ v0.1.1
    The adventure title is NOT case sensitive.
 5. The above commands can be sent as private messages.
 6. Response is to the channel that sent it, including private messages.
-7. Any valid basement rule is returned for private messages. 
-8. Only rules relevant to the channel are returned when using a public channel.
+7. Any valid basement rule is returned for private messages. Only rules
+   relevant to the channel are returned when using a public channel.
 
 ------------------------------------------------------------------
 
